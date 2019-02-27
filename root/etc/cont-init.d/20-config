@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bash
+
+# make folders
+mkdir -p /opt/kerio/mailserver
+
+# permissions
+chown -R abc:abc /opt/kerio/mailserver
