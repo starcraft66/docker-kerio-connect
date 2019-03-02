@@ -9,6 +9,7 @@ RUN curl -L http://download.kerio.com/dwn/kerio-connect-linux-64bit.deb > /tmp/k
     dpkg -i /tmp/kerio.deb || true && \
     apt-get update && \
     apt-get -f -y install && \
+    apt-get -y install libcap2-bin && \
     apt-get -y upgrade && \
     dpkg --fsys-tarfile /tmp/kerio.deb | tar xOf - ./etc/init.d/kerio-connect > /kerio-connect && \
     chmod +x /kerio-connect && \

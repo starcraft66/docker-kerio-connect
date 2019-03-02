@@ -3,5 +3,11 @@
 # make folders
 mkdir -p /opt/kerio/mailserver
 
+# fix kerio rpath
+ldconfig
+
 # permissions
 chown -R abc:abc /opt/kerio/mailserver
+
+# allow kerio to bind to privileged ports
+setcap 'cap_net_bind_service=+ep' /opt/kerio/mailserver/mailserver
