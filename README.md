@@ -30,10 +30,18 @@ docker build -t starcraft66/kerio-connect .
 ```bash
 docker run --name="kerio" \
 -p 4040:4040 \
--p 22:22 -p 25:25 -p 465:465 -p 587:587 -p 110:110 -p 995:995 \
+-p 25:25 -p 465:465 -p 587:587 -p 110:110 -p 995:995 \
 -p 143:143 -p 993:993 -p 119:119 -p 563:563 -p 389:389 -p 636:636 \
 -p 80:80 -p 443:443 -p 5222:5222 -p 5223:5223 \
--v /path/to/mailfolder:/opt/kerio/mailserver starcraft66/kerio-connect 
+-v /path/to/cluster.cfg:/opt/kerio/mailserver/cluster.cfg \
+-v /path/to/users.cfg:/opt/kerio/mailserver/users.cfg \
+-v /path/to/mailserver.cfg:/opt/kerio/mailserver/mailserver.cfg \
+-v /path/to/stats.dat:/opt/kerio/mailserver/stats.dat \
+-v /path/to/charts.dat:/opt/kerio/mailserver/charts.dat \
+-v /path/to/license:/opt/kerio/mailserver/license \
+-v /path/to/store:/opt/kerio/mailserver/store \
+-v /path/to/sslcert:/opt/kerio/mailserver/sslcert \
+starcraft66/kerio-connect 
 ```
 
 ### Configure Kerio
