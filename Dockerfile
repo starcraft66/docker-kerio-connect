@@ -21,4 +21,4 @@ COPY root/ /
 
 EXPOSE 25 80 110 119 143 389 443 465 563 587 636 993 995 4040 5222 5223
 
-VOLUME /opt/kerio/mailserver
+VOLUME /opt/kerio/mailserver/cluster.cfg /opt/kerio/mailserver/users.cfg /opt/kerio/mailserver/mailserver.cfg /opt/kerio/mailserver/stats.dat /opt/kerio/mailserver/license /opt/kerio/mailserver/store /opt/kerio/mailserver/sslcert /opt/kerio/mailserver/stats.dat /opt/kerio/mailserver/charts.dat
