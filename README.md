@@ -2,9 +2,8 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/starcraft66/kerio-connect.svg)
 ![Docker Stars](https://img.shields.io/docker/stars/starcraft66/kerio-connect.svg)
 ![Docker Layers](https://images.microbadger.com/badges/image/starcraft66/kerio-connect.svg)
-![Docker Version](https://images.microbadger.com/badges/version/starcraft66/kerio-connect.svg)
-![Docker Automated build](https://img.shields.io/docker/automated/starcraft66/kerio-connect.svg)
-![Docker Build Status](https://img.shields.io/docker/build/starcraft66/kerio-connect.svg)
+![Docker Automated build](https://github.com/starcraft66/docker-kerio-connect/workflows/Master%20Branch%20Image/badge.svg)
+![Docker Automated build](https://github.com/starcraft66/docker-kerio-connect/workflows/Tagged%20Images/badge.svg)
 
 Kerio Connect is a fully featured enterprise-class email solution.
 More details at http://www.kerio.com/products/kerio-connect/server.
