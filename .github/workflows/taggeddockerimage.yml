@@ -14,6 +14,6 @@ jobs:
     - uses: actions/docker/login@master
       env:
         DOCKER_USERNAME: starcraft66
-        DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+        DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN_OWNED }}
     - name: Build the Docker image
       run: ./build_all_images.sh
