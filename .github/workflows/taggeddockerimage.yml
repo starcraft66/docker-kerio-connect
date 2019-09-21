@@ -10,18 +10,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out the repo
-      uses: actions/checkout@v1
-    - name: Login to Docker Hub
-      uses: actions/docker/login@master
-      env:
-        DOCKER_USERNAME: starcraft66
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_TOKEN }}
-    - name: Login to the GitHub Package Registry
-      uses: actions/docker/login@master
-      env:
-        DOCKER_REGISTRY_URL: "docker.pkg.github.com"
-        DOCKER_USERNAME: starcraft66
-        DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN_OWNED }}
+    - uses: actions/checkout@v1
     - name: Build the Docker image
       run: ./build_tagged_images.sh
+      env:
+        DOCKER_HUB_USERNAME: starcraft66
+        DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_TOKEN }}
+        GITHUB_PKG_USERNAME: starcraft66
+        GITHUB_PKG_PASSWORD: ${{ secrets.GITHUB_TOKEN_OWNED }}

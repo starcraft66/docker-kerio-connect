@@ -1,4 +1,10 @@
 #!/bin/bash
+
+echo "Logging into Docker Hub"
+docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD
+echo "Logging into GitHub Package Registry"
+docker login docker.pkg.github.com --username $GITHUB_PKG_USERNAME --password $GITHUB_PKG_PASSWORD
+
 IS_LATEST=0
 for tag in $(git tag --sort=taggerdate); do
     git checkout tags/$tag
