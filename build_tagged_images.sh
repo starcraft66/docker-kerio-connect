@@ -6,7 +6,7 @@ echo "Logging into GitHub Package Registry"
 docker login docker.pkg.github.com --username $GITHUB_PKG_USERNAME --password $GITHUB_PKG_PASSWORD
 
 IS_LATEST=0
-for tag in $(git tag --sort=taggerdate); do
+for tag in $(git tag --sort=-v:taggerdate); do
     git checkout tags/$tag
     echo "Building tag $tag."
     docker build --tag starcraft66/kerio-connect:$tag --tag docker.pkg.github.com/starcraft66/docker-kerio-connect/kerio-connect:$tag .
