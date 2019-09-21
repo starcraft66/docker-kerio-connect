@@ -16,7 +16,9 @@ for tag in $(git tag --sort=-v:taggerdate); do
     docker push docker.pkg.github.com/starcraft66/docker-kerio-connect/kerio-connect:$tag
     if [ x$IS_LATEST == x"0" ]; then
         # The most recent git tag should be the "latest" docker tag
+        docker image tag starcraft66/kerio-connect:$tag starcraft66/kerio-connect:latest
         docker push starcraft66/kerio-connect:latest
+        docker image tag docker.pkg.github.com/starcraft66/docker-kerio-connect/kerio-connect:latest:$tag docker.pkg.github.com/starcraft66/docker-kerio-connect/kerio-connect:latest
         docker push docker.pkg.github.com/starcraft66/docker-kerio-connect/kerio-connect:latest
     fi
     IS_LATEST=1
