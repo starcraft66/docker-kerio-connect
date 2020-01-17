@@ -5,7 +5,7 @@ LABEL maintainer="starcraft66@gmail.com"
 ARG DEBIAN_FRONTEND="noninteractive"
 ARG KERIO_CONNECT_NOT_RUN="yes"
 
-RUN curl -L http://cdn.kerio.com/dwn/connect/connect-9.2.10-4692/kerio-connect-9.2.10-4692-linux-amd64.deb > /tmp/kerio.deb && \
+RUN curl -L http://cdn.kerio.com/dwn/connect/connect-9.2.11-4847/kerio-connect-9.2.11-4847-linux-amd64.deb > /tmp/kerio.deb && \
     dpkg -i /tmp/kerio.deb || true && \
     apt-get update && \
     apt-get -f -y install && \
